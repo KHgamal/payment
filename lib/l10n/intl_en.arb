@@ -1,0 +1,15 @@
+{
+    "payment": "Payment",
+    "bill_details": "Bill Details",
+    "criminal_law": "Criminal Law",
+    "general_consultation_type": "General Consultation Type",
+    "harassment": "Harassment",
+    "consultation_fee": "500 EGP",
+    "wallet_balance": "Wallet Balance",
+    "wallet_balance_value": "1200 EGP",
+    "credit_card": "Credit Card",
+    "add_new_card": "+ Add New Card",
+    "e_wallet": "E-Wallet",
+    "confirm_payment": "Confirm Payment"
+  }
+  

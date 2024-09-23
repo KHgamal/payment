@@ -1,0 +1,15 @@
+{
+    "payment": "الدفع",
+    "bill_details": "تفاصيل الفاتورة",
+    "criminal_law": "قانون جنائي",
+    "general_consultation_type": "نوع الاستشارة العام",
+    "harassment": "تحرش",
+    "consultation_fee": "500 جنية",
+    "wallet_balance": "رصيد المحفظة",
+    "wallet_balance_value": "1200 جنية",
+    "credit_card": "بطاقة الدفع الالكتروني",
+    "add_new_card": "+ اضافة بطاقة جديدة",
+    "e_wallet": "المحفظة الالكترونية",
+    "confirm_payment": "تاكيد الدفع"
+  }
+  
