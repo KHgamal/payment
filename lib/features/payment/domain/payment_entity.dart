@@ -21,3 +21,17 @@ class PaymentKey {
 
   PaymentKey({required this.token});
 }
+
+// domain/entities/payment_entities.dart
+
+class CardInfo {
+  final String cardNumber;
+  final String expiryDate;
+  final String cvc;
+
+  CardInfo({
+    required this.cardNumber,
+    required this.expiryDate,
+    required this.cvc,
+  });
+}

@@ -23,19 +23,24 @@ import 'package:payment/features/payment/domain/payment_repo.dart' as _i944;
 import 'package:payment/features/payment/domain/payment_usecase.dart' as _i748;
 import 'package:payment/features/payment/presentation/controller/payment/payment_bloc.dart'
     as _i966;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
-  _i174.GetIt init({
+  Future<_i174.GetIt> init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
-  }) {
+  }) async {
     final gh = _i526.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
     final registerModule = _$RegisterModule();
+    await gh.factoryAsync<_i460.SharedPreferences>(
+      () => registerModule.prefs,
+      preResolve: true,
+    );
     gh.singleton<_i361.Dio>(() => registerModule.provideDio);
     gh.singleton<_i1037.ApiClient>(() => registerModule.apiService);
     gh.singleton<_i695.PaymentRemoteDataSource>(
@@ -44,6 +49,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i944.PaymentRepository>(() => _i7.PaymentRepositoryImpl(
           remoteDataSource: gh<_i695.PaymentRemoteDataSource>(),
           networkInfo: gh<_i99.NetworkInfo>(),
+          sharedPreferences: gh<_i460.SharedPreferences>(),
         ));
     gh.factory<_i748.ProcessPaymentUseCase>(
         () => _i748.ProcessPaymentUseCase(gh<_i944.PaymentRepository>()));

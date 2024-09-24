@@ -5,14 +5,17 @@ import 'package:payment/core/network_info.dart';
 import 'package:payment/core/utils/helpers/di/injectable_config.config.dart';
 import 'package:payment/features/payment/data/data_source/remote_datasource.dart';
 import 'package:payment/features/payment/data/services/payment_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 GetIt getIt = GetIt.instance;
 
 @InjectableInit()
-GetIt configureDependencies() => getIt.init();
+Future<GetIt> configureDependencies() => getIt.init();
 
  @module
 abstract class RegisterModule {
+   @preResolve
+  Future<SharedPreferences> get prefs => SharedPreferences.getInstance();
   
   @singleton
   Dio get provideDio {

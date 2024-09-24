@@ -13,6 +13,7 @@ import 'package:payment/features/payment/presentation/ui/widgets/custom_payment_
 import 'package:payment/features/payment/presentation/ui/widgets/header.dart';
 import 'package:payment/features/payment/presentation/ui/widgets/payment_option.dart';
 import 'package:payment/generated/l10n.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/price_container.dart';
@@ -55,13 +56,16 @@ class PaymentView extends StatelessWidget {
                     value: 2,
                   ),
                   BlocConsumer<PaymentBloc, PaymentState>(
-                    listener: (context, state) {
-                      if (state is Success) {
-                        launchUrl(
-                          Uri.parse(
-                              "https://accept.paymob.com/api/acceptance/iframes/870614?payment_token=${state.paymentKey.token}"),
-                        );
-                      } else if (state is Failure) {
+                    listener: (context, state) async {
+                           if (state is Success) {
+              final iframeUrl =
+                  "https://accept.paymob.com/api/acceptance/iframes/870614?payment_token=${state.paymentKey.token}";
+              
+              // Launch the Paymob iframe using the payment token
+             
+                await launchUrl(Uri.parse(iframeUrl));
+             
+            } else if (state is Failure) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text(state.message)),
                         );
@@ -102,7 +106,12 @@ class PaymentView extends StatelessWidget {
                     value: 3,
                   ),
                   SizedBox(height: 40.h),
-                  const CustomPaymentButton(),
+                 CustomPaymentButton(
+                  onTap: (){
+                 final pref = getIt<SharedPreferences>().getString("payment_token");
+                 print("----------------$pref-----------------------");
+                  },
+                 ),
                   //const Spacer(),
                 ],
               ),

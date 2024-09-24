@@ -6,13 +6,13 @@ import 'package:payment/generated/l10n.dart';
 
 class CustomPaymentButton extends StatelessWidget {
   const CustomPaymentButton({
-    super.key,
+    super.key, this.onTap,
   });
-
+final onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      //onTap: () => Navigator.pop(context),
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: 50.h,

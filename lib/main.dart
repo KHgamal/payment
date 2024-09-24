@@ -8,8 +8,9 @@ import 'package:payment/features/payment/presentation/ui/views/payment_view.dart
 import 'package:payment/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  configureDependencies();
+void main() async {
+   WidgetsFlutterBinding.ensureInitialized();
+ await configureDependencies();
   runApp(const MyApp());
 }
 

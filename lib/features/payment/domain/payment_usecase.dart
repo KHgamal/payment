@@ -9,13 +9,22 @@ abstract class UseCase<Type, Params> {
 }
 
 @injectable
-class ProcessPaymentUseCase implements UseCase<PaymentKey, OrderEntity> {
+class ProcessPaymentUseCase implements UseCase<PaymentKey, ProcessPaymentParams> {
   final PaymentRepository repository;
 
   ProcessPaymentUseCase(this.repository);
 
   @override
-  Future<Either<Failure, PaymentKey>> call(OrderEntity order) async {
-    return await repository.processPayment(order);
+  Future<Either<Failure, PaymentKey>> call(ProcessPaymentParams params) async {
+    return await repository.processPayment(params.order);
   }
 }
+
+class ProcessPaymentParams {
+  final OrderEntity order;
+
+  ProcessPaymentParams({
+    required this.order,
+  });
+}
+

@@ -16,11 +16,16 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   Future<void> _onStarted(Started event, Emitter<PaymentState> emit) async {
     emit(const PaymentState.loading());
 
-    final result = await processPaymentUseCase(event.order);
+    final params = ProcessPaymentParams(order: event.order);
+
+    final result = await processPaymentUseCase(params);
 
     result.fold(
       (failure) => emit(PaymentState.failure(failure.message)),
-      (paymentKey) => emit(PaymentState.success(paymentKey)),
+      (paymentKey) {
+        // Emit the payment key and pass it to the iframe URL
+        emit(PaymentState.success(paymentKey));
+      },
     );
   }
 }
