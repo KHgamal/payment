@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نوع الاستشارة العام"),
         "harassment": MessageLookupByLibrary.simpleMessage("تحرش"),
         "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+        "sub_consultation_type":
+            MessageLookupByLibrary.simpleMessage("نوع الاستشارة الفرعي"),
         "wallet_balance": MessageLookupByLibrary.simpleMessage("رصيد المحفظة"),
         "wallet_balance_value":
             MessageLookupByLibrary.simpleMessage("1200 جنية")

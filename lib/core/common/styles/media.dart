@@ -11,36 +11,44 @@ class Assets {
   static const String assetsImagesCard = "assets/images/card.svg";
 
   /// Assets for assetsImagesCash
-  /// assets/images/cash.svg
-  static const String assetsImagesCash = "assets/images/cash.svg";
+  /// assets/images/cash.png
+  static const String assetsImagesCash = "assets/images/cash.png";
 
   /// Assets for assetsImagesCib
-  /// assets/images/cib.svg
-  static const String assetsImagesCib = "assets/images/cib.svg";
+  /// assets/images/cib.png
+  static const String assetsImagesCib = "assets/images/cib.png";
 
   /// Assets for assetsImagesEtislat
-  /// assets/images/etislat.svg
-  static const String assetsImagesEtislat = "assets/images/etislat.svg";
+  /// assets/images/etislat.png
+  static const String assetsImagesEtislat = "assets/images/etislat.png";
 
   /// Assets for assetsImagesMizaa
-  /// assets/images/mizaa.svg
-  static const String assetsImagesMizaa = "assets/images/mizaa.svg";
+  /// assets/images/mizaa.png
+  static const String assetsImagesMizaa = "assets/images/mizaa.png";
 
   /// Assets for assetsImagesMoneySend
   /// assets/images/money-send.svg
   static const String assetsImagesMoneySend = "assets/images/money-send.svg";
 
   /// Assets for assetsImagesOrange
-  /// assets/images/orange.svg
-  static const String assetsImagesOrange = "assets/images/orange.svg";
+  /// assets/images/orange.png
+  static const String assetsImagesOrange = "assets/images/orange.png";
 
   /// Assets for assetsImagesPhoneCash
-  /// assets/images/phone_cash.svg
-  static const String assetsImagesPhoneCash = "assets/images/phone_cash.svg";
+  /// assets/images/phone_cash.png
+  static const String assetsImagesPhoneCash = "assets/images/phone_cash.png";
 
   /// Assets for assetsImagesQahera
-  /// assets/images/qahera.svg
-  static const String assetsImagesQahera = "assets/images/qahera.svg";
+  /// assets/images/qahera.png
+  static const String assetsImagesQahera = "assets/images/qahera.png";
+
+  /// Assets for assetsImagesTickSquare
+  /// assets/images/tick-square.svg
+  static const String assetsImagesTickSquare = "assets/images/tick-square.svg";
+
+  /// Assets for assetsImagesTickSquareGreen
+  /// assets/images/tick-square-green.svg
+  static const String assetsImagesTickSquareGreen = "assets/images/tick-square-green.svg";
 
   /// Assets for assetsImagesWalletCheck
   /// assets/images/wallet-check.svg

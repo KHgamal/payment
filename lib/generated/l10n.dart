@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Sub-type of consultation`
+  String get sub_consultation_type {
+    return Intl.message(
+      'Sub-type of consultation',
+      name: 'sub_consultation_type',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Harassment`
   String get harassment {
     return Intl.message(

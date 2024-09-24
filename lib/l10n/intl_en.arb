@@ -3,6 +3,7 @@
     "bill_details": "Bill Details",
     "criminal_law": "Criminal Law",
     "general_consultation_type": "General Consultation Type",
+    "sub_consultation_type": "Sub-type of consultation",
     "harassment": "Harassment",
     "consultation_fee": "500 EGP",
     "wallet_balance": "Wallet Balance",

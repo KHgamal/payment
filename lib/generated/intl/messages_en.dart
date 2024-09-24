@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("General Consultation Type"),
         "harassment": MessageLookupByLibrary.simpleMessage("Harassment"),
         "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+        "sub_consultation_type":
+            MessageLookupByLibrary.simpleMessage("Sub-type of consultation"),
         "wallet_balance":
             MessageLookupByLibrary.simpleMessage("Wallet Balance"),
         "wallet_balance_value": MessageLookupByLibrary.simpleMessage("1200 EGP")
