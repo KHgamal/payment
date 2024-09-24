@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:payment/core/common/styles/strings.dart';
 import 'package:payment/core/errors/dio_exception.dart';
 import 'package:payment/core/errors/failure.dart';
 import 'package:payment/core/network_info.dart';
@@ -31,7 +32,7 @@ class PaymentRepositoryImpl implements PaymentRepository {
 
         "auth_token": authResponse.token,//From First Api
         "order_id":orderResponse.id.toString(),//From Second Api  >>(STRING)<<
-        "integration_id": 4839998,//Integration Id Of The Payment Method
+        "integration_id": integrationId,//Integration Id Of The Payment Method
         
         "amount_cents":order.amountCents, 
         "currency": order.currency, 

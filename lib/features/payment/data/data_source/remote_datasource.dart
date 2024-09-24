@@ -1,6 +1,4 @@
-// data/sources/remote/payment_remote_data_source.dart
-
-import 'package:injectable/injectable.dart';
+import 'package:payment/core/common/styles/strings.dart';
 import 'package:payment/features/payment/data/models/payment_models.dart';
 import 'package:payment/features/payment/data/services/payment_service.dart';
 
@@ -17,8 +15,7 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
 
   @override
   Future<AuthResponse> authenticate() async {
-    //ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RrM016UTJMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuWEtaUlZac3dmaWFPdVVMajZkQ1JWRzA1X0hFZWl0VU9YUl9rVGF0cUV4ZWZkMnVIbl9nNFNNQ0ltc2pYaGVxbm1mQ245QUJEb01sRXRHR1o1TWNsc1E=
-    final body = {"api_key": "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RrM016UTJMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuWEtaUlZac3dmaWFPdVVMajZkQ1JWRzA1X0hFZWl0VU9YUl9rVGF0cUV4ZWZkMnVIbl9nNFNNQ0ltc2pYaGVxbm1mQ245QUJEb01sRXRHR1o1TWNsc1E="};
+    final body = {"api_key": apiKey};
     return await apiClient.authenticate(body);
   }
 
