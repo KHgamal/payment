@@ -1,4 +1,4 @@
-/* import 'package:dio/dio.dart';
+import 'package:dio/dio.dart';
 
 class DioExceptionModel implements Exception {
   late String errorMessage;
@@ -32,4 +32,4 @@ class DioExceptionModel implements Exception {
         break;
     }
   }
-} */
+}

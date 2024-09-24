@@ -2,12 +2,14 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:payment/core/utils/helpers/di/injectable_config.dart';
 import 'package:payment/features/payment/presentation/controller/check_provider.dart';
 import 'package:payment/features/payment/presentation/ui/views/payment_view.dart';
 import 'package:payment/generated/l10n.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MyApp());
 }
 
