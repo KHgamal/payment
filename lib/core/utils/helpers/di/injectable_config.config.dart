@@ -54,7 +54,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i748.ProcessPaymentUseCase>(
         () => _i748.ProcessPaymentUseCase(gh<_i944.PaymentRepository>()));
     gh.factory<_i966.PaymentBloc>(() => _i966.PaymentBloc(
-        processPaymentUseCase: gh<_i748.ProcessPaymentUseCase>()));
+          processPaymentUseCase: gh<_i748.ProcessPaymentUseCase>(),
+          paymentRepository: gh<_i944.PaymentRepository>(),
+        ));
     return this;
   }
 }

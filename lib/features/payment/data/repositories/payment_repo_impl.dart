@@ -94,8 +94,28 @@ class PaymentRepositoryImpl implements PaymentRepository {
       return const Left(ServerFailure("No internet connection"));
     }
   }
+   
+    @override
+  Future<Either<Failure, ChargeResponse>> chargePayment(String token, Map<String, dynamic> chargeData) async {
+    if (await networkInfo.isConnected) {
+      try {
+        // Call the remote data source's chargePayment method with both parameters
+        final response = await remoteDataSource.chargePayment(token, chargeData);
+        return Right(response);
+      } on DioException catch (e) {
+        final dioExceptionModel = DioExceptionModel.fromDioError(
+          e,
+          e.response?.data['message'] ?? 'An unexpected error occurred',
+        );
+        return Left(ServerFailure(dioExceptionModel.errorMessage));
+      }
+    } else {
+      return const Left(ServerFailure("No internet connection"));
+    }
+  }
+
    // Retrieve stored payment token if needed
-  String? getSavedPaymentToken() {
+ String? getSavedPaymentToken() {
     return _getPaymentToken();
   }
 }

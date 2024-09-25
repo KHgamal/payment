@@ -2,6 +2,7 @@
 
 import 'package:dio/dio.dart';
 import 'package:payment/features/payment/data/models/payment_models.dart';
+import 'package:payment/features/payment/domain/payment_entity.dart';
 import 'package:retrofit/retrofit.dart';
 
 
@@ -22,5 +23,9 @@ abstract class ApiClient {
   // 3. Payment Key Request
   @POST("/acceptance/payment_keys")
   Future<PaymentKeyResponse> requestPaymentKey(@Header("Authorization") String token, @Body() Map<String, dynamic> body);
+
+  // 4. Charge Payment
+  @POST("/charge")
+  Future<ChargeResponse> charge(@Body() Map<String, dynamic> chargeData);
 }
 

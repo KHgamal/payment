@@ -1,11 +1,13 @@
 import 'package:payment/core/common/styles/strings.dart';
 import 'package:payment/features/payment/data/models/payment_models.dart';
 import 'package:payment/features/payment/data/services/payment_service.dart';
+import 'package:payment/features/payment/domain/payment_entity.dart';
 
 abstract class PaymentRemoteDataSource {
   Future<AuthResponse> authenticate();
   Future<OrderResponse> registerOrder(String token, Map<String, dynamic> orderData);
   Future<PaymentKeyResponse> requestPaymentKey(String token, Map<String, dynamic> paymentKeyData);
+  Future<ChargeResponse> chargePayment(String token, Map<String, dynamic> chargeData);
 }
 
 class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
@@ -27,5 +29,12 @@ class PaymentRemoteDataSourceImpl implements PaymentRemoteDataSource {
   @override
   Future<PaymentKeyResponse> requestPaymentKey(String token, Map<String, dynamic> paymentKeyData) async {
     return await apiClient.requestPaymentKey("Bearer $token", paymentKeyData);
+  }
+
+   @override
+  Future<ChargeResponse> chargePayment(String token, Map<String, dynamic> chargeData) async {
+    // Include the token in the charge request if needed
+    chargeData['token'] = token; // Example of including the token
+    return await apiClient.charge(chargeData);
   }
 }

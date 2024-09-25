@@ -22,16 +22,14 @@ class PaymentKey {
   PaymentKey({required this.token});
 }
 
-// domain/entities/payment_entities.dart
+class ChargeResponse {
+  final String status;
+  // Add other fields as per the API response
 
-class CardInfo {
-  final String cardNumber;
-  final String expiryDate;
-  final String cvc;
+  ChargeResponse({required this.status});
 
-  CardInfo({
-    required this.cardNumber,
-    required this.expiryDate,
-    required this.cvc,
-  });
+  factory ChargeResponse.fromJson(Map<String, dynamic> json) {
+    return ChargeResponse(status: json['status']);
+  }
 }
+
